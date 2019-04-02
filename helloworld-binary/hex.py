@@ -14,7 +14,7 @@ def main(fin, fout):
                 if c.isspace(): continue
                 if prev == None: prev = c
                 else:
-                    new_bytes.append(int(c + prev, 16))
+                    new_bytes.append(int(prev + c, 16))
                     prev = None
     if prev != None:
         print('uneven number of hex characters in file')

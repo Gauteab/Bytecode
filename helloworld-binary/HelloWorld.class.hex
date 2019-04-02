@@ -1,0 +1,101 @@
+
+##############################
+# Hello World written in hex #
+##############################
+
+# Java Magic Number
+cafebabe
+
+# Version Number:
+0000 0034
+
+##############################
+#        Constant Pool       #
+##############################
+
+# Constant Pool Size
+0016
+
+# Class with name at index 2 (7 is the tag for class)
+07 0002 
+
+#  UTF8 10 bytes    H  e  l  l  o  W  o  r  l  d
+01 000a             48 65 6c 6c 6f 57 6f 72 6c 64
+
+# Adding the super class (java/lang/Object)
+07 0004   # j  a  v  a  /  l  a  n  g  /  O  b  j  e  c  t
+01 0010     6a 61 76 61 2f 6c 61 6e 67 2f 4f 62 6a 65 63 74
+
+# References to 'System' and 'PrintStream' (type of out)
+07 0006
+01 0010  6a 61 76 61 2f 6c 61 6e 67 2f 53 79 73 74 65 6d
+07 0008
+01 0013  6a 61 76 61 2f 69 6f 2f 50 72 69 6e 74 53 74 72 65 61 6d
+
+# Reference to "Hello World" string
+08 000a
+01 000b  48 65 6c 6c 6f 20 57 6f 72 6c 64
+
+# Reference to field 'out'
+09 0005 000c  # Fieldref on 'System' (#5) for out (nameandtype in #12)
+0c 000d 000e  # NameAndType 0d = 'out' in #13, 0e = index of Ljava/io/PrintStream;
+01 0003   6f 75 74 # "out"
+01 0015   4c 6a 61 76 61 2f 69 6f 2f 50 72 
+          69 6e 74 53 74 72 65 61 6d 3b    # Ljava/io/PrintStream;
+
+# Reference to 'println' method
+0a00 0700 10 # method ref (0a) on PrintStream (07) with NameAndType (0x10)
+0c00 1100 12 # NameAndType with name (0x11) and type (0x12)
+0100 07   70 72 69 6e 74 6c 6e  # println
+0100 15   28 4c 6a 61 76 61 2f 6c 61 6e 67 
+          2f 53 74 72 69 6e 67 3b 29 56 # (Ljava/lang/String;)V
+
+# UTF8 strings for main method
+0100 04   6d 61 69 6e # 'main'
+0100 16   28 5b 4c 6a 61 76 61 2f 6c 61 6e 
+          67 2f 53 74 72 69 6e 67 3b 29 56 # ([Ljava/lang/String;)V
+0100 04   43 6f 64 65 # Special 'Code' attribute
+
+### End of constant pool ###
+
+######################
+# Class Descriptor   #
+######################
+
+0021 # Access Modifiers For Class (super public)
+0001 # Index of class in constant pool
+0003 # Index of super class in constant pool
+0000 # zero interfaces
+0000 # zero fields
+
+### Begin Methods ###
+
+0001 # one method
+
+### Begin Main ###
+
+0009 # method access (public static)
+0013 # index of method name
+0014 # index of method type
+
+0001 # Number of Attributes
+0015 # Code Attribute ( this is index #21 in our constant pool )
+0000 0015 # Code Attribute size of 21 bytes. 
+
+# 21 bytes of code attribute:
+0002 0001 # Max stack size of 2, and Max local var size of 1
+0000 0009 # Size of code. 9 bytes
+
+# The actual machine instructions:
+b200 0b # b2 = getstatic, 000b = index #11 in constant pool ( out )
+1209    # 12 = ldc ( load constant ), 09 = index #19 ( Hello World )
+b600 0f # b6 = invokevirtual, 000f = index #15 ( method println )
+b1      # b1 = return void
+
+0000 # Exception table of size 0
+0000 # Attribute count for this attribute of 0
+
+### End Main and Methods ###
+
+0000 # zero attributes
+
