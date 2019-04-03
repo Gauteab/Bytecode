@@ -1,0 +1,39 @@
+
+##############################
+# Hello World written in hex #
+##############################
+
+# Java Magic Number
+cafebabe
+
+# Version Number:
+0000 0034
+
+##############################
+#        Constant Pool       #
+##############################
+
+# Constant Pool Size
+0003
+
+# Class with name at index 2 (7 is the tag for class)
+07 0002 
+
+#  UTF8 10 bytes    T  e  s  t
+01 0004             54 65 73 74
+
+
+### End of constant pool ###
+
+######################
+# Class Descriptor   #
+######################
+
+0021 # Access Modifiers For Class (super public)
+0001 # Index of class in constant pool
+0000 # Index of super class in constant pool
+0000 # zero interfaces
+0000 # zero fields
+0000 # zero method
+0000 # zero attributes
+
